@@ -9,13 +9,13 @@ The goal of this exercise is to assess the student's ability to properly modify 
 - Find and add the needed classes/files to implement a fully unit tested Repository.
 - Unit Test and Implement the `NameGenerator` class.
 - Create a migration for the `Student` model.
-- Use your seed method to populate the database with students.
+- Use your seed method to populate the database with students. Your database must contain 10 with unique names.
 - Fully implement the Razor View for the supplied `Student` controller using the Specifications below.
 
 
 ## Specifications
 
-- Implement & Unit Test the `NameGenerator` class. This class should generate a random FirstName, LastName, Major combination. Use this class when creating Students.
+- The `NameGenerator` class should generate a random FirstName, LastName, Major combination.
 - `/Student` - This view should display a simple **HTML table** of all students in your database exposing **all** of the properties for the Student model. Your **HTML table** should have headers and be centered on the page.
 
 
@@ -28,3 +28,8 @@ The goal of this exercise is to assess the student's ability to properly modify 
 5. A .gitignore :simple_smile:
 
 
+## Hints
+
+- Find what's missing
+- Ensure the students in your database are unique. What does the first argument of the `AddOrUpdate` method represent? Can you come up with an expression to check for uniqueness?
+- `NameGenerator` can choose from a predefined list of names and majors. Is there a way to randomly select an item from a list?
