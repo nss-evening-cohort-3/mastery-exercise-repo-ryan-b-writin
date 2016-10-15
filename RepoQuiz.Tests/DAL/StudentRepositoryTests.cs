@@ -40,11 +40,38 @@ namespace RepoQuiz.Tests.DAL
             mock_student_table = new Mock<DbSet<Student>>();
             studentList = new List<Student>();
             repo = new StudentRepository(mock_context.Object);
+            ConnectMocksToDatastore();
         }
         [TestCleanup]
         public void Teardown()
         {
             repo = null;
+        }
+        [TestMethod]
+        public void RepoCanCreateInstance()
+        {
+            Assert.IsNotNull(repo);
+        }
+        [TestMethod]
+        public void RepoCanGetAllStudents()
+        {
+            studentList.Add(new Student { FirstName = "x", LastName = "y", Major = "z" });
+            studentList.Add(new Student { FirstName = "q", LastName = "r", Major = "s" });
+            studentList.Add(new Student { FirstName = "t", LastName = "u", Major = "v" });
+            studentList.Add(new Student { FirstName = "a", LastName = "b", Major = "c" });
+            studentList.Add(new Student { FirstName = "d", LastName = "e", Major = "f" });
+            studentList.Add(new Student { FirstName = "g", LastName = "h", Major = "i" });
+            studentList.Add(new Student { FirstName = "j", LastName = "k", Major = "l" });
+            studentList.Add(new Student { FirstName = "m", LastName = "n", Major = "o" });
+            studentList.Add(new Student { FirstName = "w", LastName = "u", Major = "t" });
+            studentList.Add(new Student { FirstName = "y", LastName = "o", Major = "o" });
+
+            var expected_student_list = studentList;
+
+            List<Student> actual_student_list = repo.GetStudents();
+
+            CollectionAssert.AreEqual(expected_student_list, actual_student_list);
+
         }
     }
 }

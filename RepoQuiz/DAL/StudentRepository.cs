@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using RepoQuiz.Models;
 
 namespace RepoQuiz.DAL
 {
@@ -11,6 +12,11 @@ namespace RepoQuiz.DAL
         public StudentRepository(StudentContext context)
         {
             this.context = context;
+        }
+
+        public List<Student> GetStudents()
+        {
+            return context.Students.ToList();
         }
     }
 }
