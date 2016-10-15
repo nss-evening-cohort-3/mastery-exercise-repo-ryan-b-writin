@@ -130,6 +130,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="DAL\Name.cs" />
     <Compile Include="DAL\NameGenerator.cs" />
     <Compile Include="DAL\StudentContext.cs" />
     <Compile Include="Global.asax.cs">

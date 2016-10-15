@@ -103,7 +103,6 @@
     <Compile Include="DAL\StudentRepositoryTests.cs" />
     <Compile Include="DAL\NameGeneratorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Controllers\HomeControllerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
@@ -116,6 +115,9 @@
       <Project>{B07F88DC-4E87-4945-83D6-0EC89E96C9C9}</Project>
       <Name>RepoQuiz</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
