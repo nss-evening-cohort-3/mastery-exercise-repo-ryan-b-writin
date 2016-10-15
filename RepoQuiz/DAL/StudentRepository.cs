@@ -14,6 +14,11 @@ namespace RepoQuiz.DAL
             this.context = context;
         }
 
+        public StudentRepository()
+        {
+            context = new StudentContext();
+        }
+
         public List<Student> GetStudents()
         {
             return context.Students.ToList();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RepoQuiz.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,12 @@ namespace RepoQuiz.Controllers
 {
     public class StudentController : Controller
     {
+        StudentRepository repo = new StudentRepository();
+
         // GET: Student
         public ActionResult Index()
         {
+            ViewBag.Students = repo.GetStudents();
             return View();
         }
 
